@@ -11,9 +11,6 @@ public class NutritionReport {
 
     public void generateDailyStatistics() {
         double totalCalories = 0;
-        double totalProtein = 0;
-        double totalCarbs = 0;
-        double totalFats = 0;
 
         for (Meal meal : user.getConsumedMeals()) {
             totalCalories += meal.calculateTotalCalories();
@@ -29,8 +26,6 @@ public class NutritionReport {
         System.out.println("Daily Calorie Needs: " + nutritionStats.get("calorieNeeds"));
         System.out.println("Consumed Calories: " + nutritionStats.get("calories"));
         System.out.println("Calorie Deficit/Surplus: " + nutritionStats.get("calorieDeficit"));
-        System.out.println("Protein: " + nutritionStats.get("protein") + "g");
-        System.out.println("Carbs: " + nutritionStats.get("carbs") + "g");
-        System.out.println("Fats: " + nutritionStats.get("fats") + "g");
+
     }
 }
