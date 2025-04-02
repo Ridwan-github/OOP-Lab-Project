@@ -9,6 +9,10 @@ public class Meal {
         this.foodItems = foodItems;
     }
 
+    public void addFoodItem (Food food){
+        foodItems.add(food);
+    }
+
     public String getName() {
         return name;
     }

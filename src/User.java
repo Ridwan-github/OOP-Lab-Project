@@ -1,3 +1,5 @@
+import java.util.List;
+
 public class User {
     private String name;
     private double weight; // in kg
@@ -5,6 +7,7 @@ public class User {
     private int age;
     private Gender gender;
     private ActivityLevel activityLevel;
+    private List<Meal> consumedMeals;
 
     public User(String name, double weight, double height, int age) {
         this.name = name;
@@ -25,6 +28,13 @@ public class User {
     }
     public double calculateDailyCalorieNeeds() {
         return calculateBMR() * activityLevel.getMultiplier();
+    }
+
+    public void addConsumedMeal (Meal meal){
+        consumedMeals.add(meal);
+    }
+    public List<Meal> getConsumedMeals() {
+        return consumedMeals;
     }
 
 
