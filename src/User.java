@@ -4,6 +4,7 @@ public class User {
     private double height; // in cm
     private int age;
     private Gender gender;
+    private ActivityLevel activityLevel;
 
     public User(String name, double weight, double height, int age) {
         this.name = name;
@@ -21,6 +22,9 @@ public class User {
         } else {
             return 447.593 + (9.247 * weight) + (3.098 * height) - (4.330 * age);
         }
+    }
+    public double calculateDailyCalorieNeeds() {
+        return calculateBMR() * activityLevel.getMultiplier();
     }
 
 
