@@ -9,11 +9,13 @@ public class User {
     private ActivityLevel activityLevel;
     private List<Meal> consumedMeals;
 
-    public User(String name, double weight, double height, int age) {
+    public User(String name, double weight, double height, int age, Gender gender, ActivityLevel activityLevel) {
         this.name = name;
         this.weight = weight;
         this.height = height;
         this.age = age;
+        this.activityLevel=activityLevel;
+        this.gender=gender;
     }
 
     public double calculateBMI() {
