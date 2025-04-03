@@ -8,6 +8,7 @@ public class User {
     private Gender gender;
     private ActivityLevel activityLevel;
     private List<Meal> consumedMeals;
+    private MealPlan currentMealPlan;
 
     public User(String name, double weight, double height, int age, Gender gender, ActivityLevel activityLevel) {
         this.name = name;
@@ -37,6 +38,13 @@ public class User {
     }
     public List<Meal> getConsumedMeals() {
         return consumedMeals;
+    }
+    public void setCurrentMealPlan(MealPlan mealPlan) {
+        this.currentMealPlan = mealPlan;
+    }
+
+    public MealPlan getCurrentMealPlan() {
+        return currentMealPlan;
     }
 
 
