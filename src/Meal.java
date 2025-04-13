@@ -1,7 +1,7 @@
 import java.util.HashMap;
 import java.util.Map;
 
-class Meal {
+public class Meal {
     private String name;
     private Map<Food, Double> foodItems; // Food and its quantity
 

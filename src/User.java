@@ -1,10 +1,10 @@
 import java.util.ArrayList;
 import java.util.List;
 
-class User {
+public class User {
     private String name;
-    private double weight; // in kg
-    private double height; // in cm
+    private double weight;
+    private double height;
     private int age;
     private Gender gender;
     private ActivityLevel activityLevel;
@@ -49,20 +49,11 @@ class User {
         this.currentMealPlan = mealPlan;
     }
 
-    public MealPlan getCurrentMealPlan() {
-        return currentMealPlan;
-    }
-
-    // Getters
     public String getName() {
         return name;
     }
 
     public double getWeight() {
         return weight;
-    }
-
-    public void setWeight(double weight) {
-        this.weight = weight;
     }
 }

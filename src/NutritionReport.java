@@ -1,7 +1,7 @@
 import java.util.HashMap;
 import java.util.Map;
 
-class NutritionReport {
+public class NutritionReport {
     private User user;
     private Map<String, Double> nutritionStats;
 

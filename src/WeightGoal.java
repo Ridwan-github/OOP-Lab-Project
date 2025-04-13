@@ -1,4 +1,4 @@
-class WeightGoal extends HealthGoal {
+public class WeightGoal extends HealthGoal {
     private double targetWeight;
 
     public WeightGoal(User user, double targetWeight, int durationInDays) {
@@ -9,7 +9,7 @@ class WeightGoal extends HealthGoal {
     @Override
     public boolean checkProgress() {
         double currentWeight = user.getWeight();
-        return Math.abs(currentWeight - targetWeight) < 0.5; // Within 0.5kg of target
+        return Math.abs(currentWeight - targetWeight) < 0.5;
     }
 
     @Override

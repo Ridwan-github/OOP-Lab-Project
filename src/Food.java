@@ -1,4 +1,4 @@
-class Food {
+public class Food {
     private String name;
     private double calories;
     private double protein;

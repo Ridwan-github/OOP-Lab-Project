@@ -1,7 +1,7 @@
 import java.util.ArrayList;
 import java.util.List;
 
-class MealPlan {
+public class MealPlan {
     private String name;
     private int durationInDays;
     private List<Meal> meals;

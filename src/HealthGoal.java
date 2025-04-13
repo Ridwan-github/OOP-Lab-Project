@@ -15,9 +15,4 @@ abstract class HealthGoal {
     public abstract boolean checkProgress();
     public abstract String getDescription();
 
-    public int getDaysRemaining() {
-        LocalDate currentDate = LocalDate.now();
-        long daysPassed = ChronoUnit.DAYS.between(startDate, currentDate);
-        return (int) Math.max(0, durationInDays - daysPassed);
-    }
 }

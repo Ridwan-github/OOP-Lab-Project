@@ -125,14 +125,22 @@ public class Main {
     private static void initializeFoodlist(FoodList list) {
         list.addFood(new Food("Apple", 52, 0.3, 14.0, 0.2));
         list.addFood(new Food("Banana", 96, 1.2, 23.0, 0.2));
-        list.addFood(new Food("Chicken Breast", 165, 31.0, 0.0, 3.6));
+        list.addFood(new Food("Chicken", 165, 31.0, 0.0, 3.6));
+        list.addFood(new Food("Broccoli", 55, 3.7, 11.0, 0.6));
+        list.addFood(new Food("Almonds", 576, 21.0, 22.0, 49.0));
+        list.addFood(new Food("Peanut Butter", 588, 25.0, 20.0, 50.0));
+        list.addFood(new Food("Avocado", 160, 2.0, 9.0, 15.0));
+        list.addFood(new Food("Beef", 500, 21.1, 21.0, 80.0));
+        list.addFood(new Food("Fish", 206, 22.0, 0.0, 13.0));
         list.addFood(new Food("Brown Rice", 112, 2.6, 23.0, 0.9));
         list.addFood(new Food("White Rice", 130, 2.7, 28.0, 0.3));
         list.addFood(new Food("Spinach", 23, 2.9, 3.6, 0.4));
         list.addFood(new Food("Eggs", 78, 6.3, 0.6, 5.3));
-        list.addFood(new Food("Salmon", 208, 20.0, 0.0, 13.0));
         list.addFood(new Food("Oats", 68, 2.5, 12.0, 1.4));
-        list.addFood(new Food("Greek Yogurt", 59, 10.0, 3.6, 0.4));
+        list.addFood(new Food("Yogurt", 59, 10.0, 3.6, 0.4));
+        list.addFood(new Food("Potato", 77, 2.0, 17.6, 0.1));
+        list.addFood(new Food("Carrot", 41, 0.9, 10.0, 0.2));
+        list.addFood(new Food("Orange", 47, 0.9, 12.0, 0.1));
     }
 
     private static void addFoodTolist(FoodList list) {

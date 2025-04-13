@@ -3,7 +3,7 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-class FoodList{
+public class FoodList{
     private Map<String, Food> foods;
 
     public FoodList() {
@@ -20,15 +20,5 @@ class FoodList{
 
     public List<Food> getAllFoods() {
         return new ArrayList<>(foods.values());
-    }
-
-    public List<Food> searchFoods(String keyword) {
-        List<Food> results = new ArrayList<>();
-        for (Food food : foods.values()) {
-            if (food.getName().toLowerCase().contains(keyword.toLowerCase())) {
-                results.add(food);
-            }
-        }
-        return results;
     }
 }
