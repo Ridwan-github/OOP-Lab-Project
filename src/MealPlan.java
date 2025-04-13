@@ -17,6 +17,10 @@ class MealPlan {
     }
 
     public double calculateDailyAverageCalories() {
+        if (meals.isEmpty() || durationInDays <= 0) {
+            return 0;
+        }
+
         double totalCalories = 0;
         for (Meal meal : meals) {
             totalCalories += meal.calculateTotalCalories();

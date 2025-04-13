@@ -33,11 +33,11 @@ class NutritionReport {
 
     public void display() {
         System.out.println("=== Nutrition Report for " + user.getName() + " ===");
-        System.out.println("Daily Calorie Needs: " + nutritionStats.get("calorieNeeds"));
-        System.out.println("Consumed Calories: " + nutritionStats.get("calories"));
-        System.out.println("Calorie Deficit/Surplus: " + nutritionStats.get("calorieDeficit"));
-        System.out.println("Protein: " + nutritionStats.get("protein") + "g");
-        System.out.println("Carbs: " + nutritionStats.get("carbs") + "g");
-        System.out.println("Fats: " + nutritionStats.get("fats") + "g");
+        System.out.println("Daily Calorie Needs: " + String.format("%.2f", nutritionStats.get("calorieNeeds")));
+        System.out.println("Consumed Calories: " + String.format("%.2f", nutritionStats.get("calories")));
+        System.out.println("Calorie Deficit/Surplus: " + String.format("%.2f", nutritionStats.get("calorieDeficit")));
+        System.out.println("Protein: " + String.format("%.2f", nutritionStats.get("protein")) + "g");
+        System.out.println("Carbs: " + String.format("%.2f", nutritionStats.get("carbs")) + "g");
+        System.out.println("Fats: " + String.format("%.2f", nutritionStats.get("fats")) + "g");
     }
 }

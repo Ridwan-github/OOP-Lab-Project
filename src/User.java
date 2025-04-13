@@ -53,6 +53,7 @@ class User {
         return currentMealPlan;
     }
 
+    // Getters
     public String getName() {
         return name;
     }

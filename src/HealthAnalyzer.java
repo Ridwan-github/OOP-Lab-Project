@@ -9,7 +9,7 @@ public class HealthAnalyzer {
     }
 
     public void analyzeNutrition(User user) {
-        // Simple analysis based on user's meals
+        
         double totalCalories = 0;
         double totalProtein = 0;
 
@@ -18,14 +18,14 @@ public class HealthAnalyzer {
             totalProtein += meal.calculateTotalProtein();
         }
 
-        // Generate recommendations based on simple analysis
+        
         if (totalCalories < user.calculateDailyCalorieNeeds() * 0.8) {
             recommendations.add("Your calorie intake is too low. Consider adding more nutritious foods to your diet.");
         } else if (totalCalories > user.calculateDailyCalorieNeeds() * 1.2) {
             recommendations.add("Your calorie intake is higher than recommended. Consider reducing portion sizes.");
         }
 
-        double recommendedProtein = user.getWeight() * 0.8; // Simple rule: 0.8g protein per kg of body weight
+        double recommendedProtein = user.getWeight() * 0.8; 
         if (totalProtein < recommendedProtein) {
             recommendations.add("Your protein intake is below recommendations. Consider adding more protein-rich foods.");
         }

@@ -25,6 +25,10 @@ class NutritionSystem {
         }
     }
 
+    public List<HealthGoal> getUserGoals(User user) {
+        return userGoals.getOrDefault(user, new ArrayList<>());
+    }
+
     public FoodList getFoodList() {
         return foodlist;
     }

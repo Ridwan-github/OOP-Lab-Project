@@ -18,6 +18,10 @@ class FoodList{
         return foods.get(name);
     }
 
+    public List<Food> getAllFoods() {
+        return new ArrayList<>(foods.values());
+    }
+
     public List<Food> searchFoods(String keyword) {
         List<Food> results = new ArrayList<>();
         for (Food food : foods.values()) {

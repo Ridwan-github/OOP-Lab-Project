@@ -13,7 +13,6 @@ class Food {
         this.fats = fats;
     }
 
-    // Getters
     public String getName() {
         return name;
     }
