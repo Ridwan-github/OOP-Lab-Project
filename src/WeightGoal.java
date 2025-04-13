@@ -1,20 +1,20 @@
-public class WeightGoal extends HealthGoal{
+class WeightGoal extends HealthGoal {
     private double targetWeight;
-    private double currentWeight;
 
-    public WeightGoal(User user, int days, double targetWeight) {
-        super(user, days);
+    public WeightGoal(User user, double targetWeight, int durationInDays) {
+        super(user, durationInDays);
         this.targetWeight = targetWeight;
-        this.currentWeight = user.getWeight();
     }
 
     @Override
-    public boolean isAchieved() {
-        return currentWeight <= targetWeight;
+    public boolean checkProgress() {
+        double currentWeight = user.getWeight();
+        return Math.abs(currentWeight - targetWeight) < 0.5; // Within 0.5kg of target
     }
+
     @Override
     public String getDescription() {
-        return "Current weight is " + currentWeight +"kg. Reach " + targetWeight + " kg in " + days + " days";
+        return "Reach " + targetWeight + "kg in " + durationInDays + " days";
     }
 
     public double getTargetWeight() {

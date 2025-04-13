@@ -1,22 +1,30 @@
+import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
-public class FoodList {
-    private List<Food> foodlist;
+class FoodList{
+    private Map<String, Food> foods;
+
+    public FoodList() {
+        this.foods = new HashMap<>();
+    }
 
     public void addFood(Food food) {
-        foodlist.add(food);
-    }
-    public void removeFood(Food food) {
-        foodlist.remove(food);
+        foods.put(food.getName(), food);
     }
 
     public Food getFood(String name) {
-        for (Food food : foodlist) {
-            if (food.getName().equalsIgnoreCase(name)) {
-                return food;
-            }
-        }
-        return null;
+        return foods.get(name);
     }
 
+    public List<Food> searchFoods(String keyword) {
+        List<Food> results = new ArrayList<>();
+        for (Food food : foods.values()) {
+            if (food.getName().toLowerCase().contains(keyword.toLowerCase())) {
+                results.add(food);
+            }
+        }
+        return results;
+    }
 }

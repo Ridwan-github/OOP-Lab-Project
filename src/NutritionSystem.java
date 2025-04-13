@@ -3,7 +3,7 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-public class NutritionSystem {
+class NutritionSystem {
     private List<User> users;
     private FoodList foodlist;
     private Map<User, List<HealthGoal>> userGoals;

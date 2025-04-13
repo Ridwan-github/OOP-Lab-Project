@@ -1,40 +1,54 @@
 public class Main {
-    public static void main(String args[]){
+public static void main(String[] args) {
         NutritionSystem system = new NutritionSystem();
 
 
-        User user = new User("John", 90.0, 180.0, 30, Gender.MALE, ActivityLevel.MODERATELY_ACTIVE);
+        User user = new User("John", 75.0, 180.0, 30, Gender.MALE, ActivityLevel.MODERATE);
         system.addUser(user);
 
-        system.getFoodList().addFood(new Food("Apple", 52));
-        system.getFoodList().addFood(new Food("Chicken", 165));
-        system.getFoodList().addFood(new Food("Rice", 112));
-        system.getFoodList().addFood(new Food("Cashew Nuts", 23));
+        // Add some food items to the database
+        system.getFoodList().addFood(new Food("Apple", 52, 0.3, 14.0, 0.2));
+        system.getFoodList().addFood(new Food("Chicken Breast", 165, 31.0, 0.0, 3.6));
+        system.getFoodList().addFood(new Food("Brown Rice", 112, 2.6, 23.0, 0.9));
+        system.getFoodList().addFood(new Food("Spinach", 23, 2.9, 3.6, 0.4));
 
+        // Create a meal plan
+        MealPlan weeklyPlan = new MealPlan("Balanced Week", 7);
 
-        Meal breakfast = new Meal("Breakfast");
-        breakfast.addFoodItem(system.getFoodList().getFood("Apple"));
-        breakfast.addFoodItem(system.getFoodList().getFood("Cashew Nuts"));
+        // Add meals to the plan
+        Meal breakfast = new Meal("Balanced Breakfast");
+        breakfast.addFoodItem(system.getFoodList().getFood("Apple"), 1.0);
+        breakfast.addFoodItem(system.getFoodList().getFood("Brown Rice"), 0.5);
 
-        Meal lunch = new Meal("Lunch");
-        lunch.addFoodItem(system.getFoodList().getFood("Chicken"));
-        lunch.addFoodItem(system.getFoodList().getFood("Rice"));
+        Meal lunch = new Meal("Protein Lunch");
+        lunch.addFoodItem(system.getFoodList().getFood("Chicken Breast"), 1.0);
+        lunch.addFoodItem(system.getFoodList().getFood("Spinach"), 2.0);
 
         weeklyPlan.addMeal(breakfast);
         weeklyPlan.addMeal(lunch);
 
-
+        // Assign the meal plan to the user
         user.setCurrentMealPlan(weeklyPlan);
+
+        // Record that the user consumed these meals
         user.recordMealConsumption(breakfast);
 
+        // Generate nutrition reports
+        NutritionReport dailyReport = system.generateDailyReport(user);
+        dailyReport.display();
 
-        HealthGoal weightGoal = new WeightGoal(user, 90.0, 70);
+        // Create and track a health goal
+        HealthGoal weightGoal = new WeightGoal(user, 70.0, 30);
         system.addHealthGoal(user, weightGoal);
 
-
-        NutritionReport analyzer = new NutritionReport(user);
+        // Check progress and recommendations
+        HealthAnalyzer analyzer = new HealthAnalyzer();
         analyzer.analyzeNutrition(user);
-        analyzer.display();
-    }
-    }
+        analyzer.trackGoalProgress(weightGoal);
+
+        // Display recommendations
+        for (String recommendation : analyzer.getRecommendations()) {
+                System.out.println("Recommendation: " + recommendation);
+        }
+}
 }

@@ -1,15 +1,23 @@
 import java.time.LocalDate;
+import java.time.temporal.ChronoUnit;
 
-public abstract class HealthGoal {
+abstract class HealthGoal {
     protected User user;
-    protected int days;
+    protected int durationInDays;
     protected LocalDate startDate;
 
-    public HealthGoal(User user, int days) {
+    public HealthGoal(User user, int durationInDays) {
         this.user = user;
-        this.days = days;
+        this.durationInDays = durationInDays;
         this.startDate = LocalDate.now();
     }
-    public abstract boolean isAchieved();
+
+    public abstract boolean checkProgress();
     public abstract String getDescription();
+
+    public int getDaysRemaining() {
+        LocalDate currentDate = LocalDate.now();
+        long daysPassed = ChronoUnit.DAYS.between(startDate, currentDate);
+        return (int) Math.max(0, durationInDays - daysPassed);
+    }
 }
